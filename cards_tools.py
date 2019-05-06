@@ -23,10 +23,35 @@ def show_menu():
 
 def new_card():
 
-    """新建名片
+    """
+    新建名片:
+    功能分析:
+        提示用户依次输入名片信息
+        将名片信息保存到一个字典
+        将字典添加到名片列表
+        提示名片添加完成
     """
     print("-" * 50)
     print("功能：新建名片")
+
+    # 1. 提示用户输入名片信息
+    name = input("请输入姓名：")
+    phone = input("请输入电话：")
+    qq = input("请输入 QQ 号码：")
+    email = input("请输入邮箱：")
+    # 2. 将用户信息保存到一个字典
+    card_dict = {"name": name,
+                 "phone": phone,
+                 "qq": qq,
+                 "email": email}
+
+    # 3. 将用户字典添加到名片列表
+    card_list.append(card_dict)
+
+    print(card_list)
+    
+    # 4. 提示添加成功信息
+    print("成功添加 %s 的名片" % card_dict["name"])
 
 
 def show_all():
