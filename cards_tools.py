@@ -56,10 +56,16 @@ def new_card():
 
 def show_all():
 
-    """显示全部
+    """显示全部:
+    功能分析
+    循环遍历名片列表，顺序显示每一个字典的信息
     """
     print("-" * 50)
     print("功能：显示全部")
+
+    for card_dict in card_list:
+
+        print(card_dict)
 
 
 def search_card():
