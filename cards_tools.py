@@ -136,7 +136,7 @@ def search_card():
             print("-" * 40)
             
             # TODO(小明) 针对找到的字典进行后续操作：修改/删除
-
+            deal_card(card_dict)
             break
     else:
         print("没有找到 %s" % find_name)
@@ -154,7 +154,17 @@ def deal_card(find_dict):
     action_str = input("请选择要执行的操作 "
                        "[1] 修改 [2] 删除 [0] 返回上级菜单")
 
-    if action == "1":
-        print("修改")
-    elif action == "2":
+    if action_str == "1":
+        #修改名片
+
+        find_dict["name"] = input("请输入姓名：")
+        find_dict["phone"] = input("请输入电话：")
+        find_dict["qq"] = input("请输入QQ：")
+        find_dict["email"] = input("请输入邮件：")
+
+        print("%s 的名片修改成功" % find_dict["name"])
+
+    elif action_str == "2":
+
+        card_list.remove(find_dict)
         print("删除")
