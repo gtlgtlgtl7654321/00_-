@@ -106,8 +106,37 @@ def show_all():
 
 def search_card():
 
-    """搜索名片
+    """
+    搜索名片
+    功能分析:
+        提示用户要搜索的姓名
+        根据用户输入的姓名遍历列表
+        搜索到指定的名片后，再执行后续的操作
     """
     print("-" * 50)
     print("功能：搜索名片")
 
+    # 1. 提示要搜索的姓名
+    find_name = input("请输入要搜索的姓名：")
+
+    # 2. 遍历字典
+    for card_dict in card_list:
+
+        if card_dict["name"] == find_name:
+
+            print("姓名\t\t\t电话\t\t\tQQ\t\t\t邮箱")
+            print("-" * 40)
+            
+            print("%s\t\t\t%s\t\t\t%s\t\t\t%s" % (
+                card_dict["name"],
+                card_dict["phone"],
+                card_dict["qq"],
+                card_dict["email"]))
+
+            print("-" * 40)
+            
+            # TODO(小明) 针对找到的字典进行后续操作：修改/删除
+
+            break
+    else:
+        print("没有找到 %s" % find_name)
