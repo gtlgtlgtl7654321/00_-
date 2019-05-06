@@ -3,6 +3,17 @@
 '''
 将对名片的 新增、查询、修改、删除 等功能封装在不同的函数中
 '''
+
+import logging
+logging.basicConfig(level=logging.INFO)
+
+"""使用：
+logging.debug('n = %d' % n)
+logging.info('n = %d' % n)
+logging.warning('n = %d' % n)
+logging.error('n = %d' % n) 
+"""
+
 # 所有名片记录的列表
 card_list = []
 
@@ -49,6 +60,7 @@ def new_card():
     card_list.append(card_dict)
 
     print(card_list)
+    logging.debug(card_dict)
     
     # 4. 提示添加成功信息
     print("成功添加 %s 的名片" % card_dict["name"])
@@ -63,9 +75,26 @@ def show_all():
     print("-" * 50)
     print("功能：显示全部")
 
-    for card_dict in card_list:
+    # 打印表头
+    for name in ["姓名", "电话", "QQ", "邮箱"]:
+        print(name, end="\t\t")
 
-        print(card_dict)
+    print("")
+
+    # 打印分隔线
+    print("=" * 50)
+    
+    count = 0
+
+    for card_dict in card_list:
+        
+        logging.debug('第 %d 个数据' %(count))
+        count += 1
+
+        print("%s\t\t%s\t\t%s\t\t%s" % (card_dict["name"],
+                                        card_dict["phone"],
+                                        card_dict["qq"],
+                                        card_dict["email"]))
 
 
 def search_card():

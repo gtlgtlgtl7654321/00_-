@@ -47,7 +47,7 @@ while True:
 
         elif action == "3":
             cards_tools.search_card()
-            
+
     elif action == "0":
         print("欢迎再次使用【名片管理系统】")
 
