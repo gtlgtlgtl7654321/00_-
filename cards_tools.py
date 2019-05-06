@@ -75,6 +75,13 @@ def show_all():
     print("-" * 50)
     print("功能：显示全部")
 
+    # 1. 判断是否有名片记录
+    if len(card_list) == 0:
+        print("提示：没有任何名片记录")
+        #如果在 return 后没有跟任何内容，只是表示该
+        #函数执行到此就不再执行后续的代码
+        return
+
     # 打印表头
     for name in ["姓名", "电话", "QQ", "邮箱"]:
         print(name, end="\t\t")
