@@ -140,3 +140,21 @@ def search_card():
             break
     else:
         print("没有找到 %s" % find_name)
+
+
+
+def deal_card(find_dict):
+
+    """操作搜索到的名片字典
+
+    :param find_dict:找到的名片字典
+    """
+    print(find_dict)
+
+    action_str = input("请选择要执行的操作 "
+                       "[1] 修改 [2] 删除 [0] 返回上级菜单")
+
+    if action == "1":
+        print("修改")
+    elif action == "2":
+        print("删除")
